@@ -1,5 +1,6 @@
 package com.yonasoft.yonagi.presentation.menus
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -25,7 +28,7 @@ fun DrawerHeader(
         modifier = Modifier
             .fillMaxWidth()
             .background(Red3)
-            .padding(42.dp)
+            .padding(60.dp)
             ,
         contentAlignment = Alignment.Center
     ) {
@@ -45,13 +48,18 @@ fun DrawerBody(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { item }
+                    .clickable { onItemClick(item) }
                     .padding(16.dp)
             ){
-                Icon(
-                    imageVector = item.icon,
-                    contentDescription = item.contentDescription
-                )
+                if (item.icon!=null){
+                    Icon(
+                        imageVector = item.icon,
+                        contentDescription = item.contentDescription,
+                    )
+                } else{
+                        Image(modifier = Modifier.size(24.dp), painter = painterResource(id = item.resource!!), contentDescription = item.contentDescription, contentScale = ContentScale.Fit)
+                }
+
                 Spacer(modifier = Modifier.width(16.dp))
                 Text(
                     text = item.title,

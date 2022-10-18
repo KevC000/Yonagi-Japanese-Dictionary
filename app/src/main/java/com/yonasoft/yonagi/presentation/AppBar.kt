@@ -1,4 +1,4 @@
-package com.yonasoft.yonagi.presentation
+package com.yonasoft.yonagi.dictionary.presentation
 
 
 import androidx.compose.foundation.layout.Box

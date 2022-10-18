@@ -1,4 +1,4 @@
-package com.yonasoft.yonagi.presentation.menus
+package com.yonasoft.yonagi.dictionary.presentation.menus
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

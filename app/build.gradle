@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
+
 
 android {
     compileSdk 32
@@ -43,12 +46,38 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+
 }
 
 dependencies {
+    def nav_version = "2.5.2"
+    def lifecycle_version = "2.5.1"
+
+
+    //Navigation
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+
+    // Compose dependencies
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    implementation "androidx.activity:activity-compose:1.6.0-alpha01"
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.24.2-alpha"
+
+    //Hilt-Dagger
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
 
     //Gson for Json parsing
     implementation 'com.google.code.gson:gson:2.9.1'
+
+    //"View Pager"
+    implementation "com.google.accompanist:accompanist-pager:0.19.0"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.19.0"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation "androidx.compose.ui:ui:$compose_version"
@@ -62,4 +91,7 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+}
+kapt {
+    correctErrorTypes true
 }

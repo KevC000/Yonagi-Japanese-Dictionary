@@ -1,6 +1,5 @@
 package com.yonasoft.yonagi.presentation.menus
 
-
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
@@ -9,7 +8,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.yonasoft.yonagi.R
-
+import com.yonasoft.yonagi.presentation.navigation.Screen
 
 data class MenuItem(
     val id: String,
@@ -23,31 +22,31 @@ data class MenuItem(
         fun getMenuItems(): List<MenuItem> {
             return listOf(
                 MenuItem(
-                    id = "Home",
+                    id = Screen.HomeScreen.route,
                     title = "Home",
                     icon = Icons.Default.Home,
                     contentDescription = "Go to Home Screen"
                 ),
                 MenuItem(
-                    id = "Search",
+                    id = Screen.SearchScreen.route,
                     title = "Search",
                     icon = Icons.Default.Search,
                     contentDescription = "Go to Dictionary Search"
                 ),
                 MenuItem(
-                    id = "Lists",
+                    id = Screen.ListsScreen.route,
                     title = "Lists",
                     icon = Icons.Default.List,
                     contentDescription = "Go to Words Lists"
                 ),
                 MenuItem(
-                    id = "Favorites",
+                    id = Screen.FavoriteScreen.route,
                     title = "Favorites",
                     icon = Icons.Default.Favorite,
                     contentDescription = "Go to Favorites"
                 ),
                 MenuItem(
-                    id = "Kana",
+                    id = Screen.KanaScreen.route,
                     title = "Kana",
                     icon = null,
                     resource = R.drawable.he,

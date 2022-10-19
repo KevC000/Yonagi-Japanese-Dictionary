@@ -1,4 +1,4 @@
-package com.yonasoft.yonagi.dictionary.presentation.menus
+package com.yonasoft.yonagi.presentation.menus
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -18,7 +18,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yonasoft.yonagi.ui.theme.Red3
-
 
 @Composable
 fun DrawerHeader(

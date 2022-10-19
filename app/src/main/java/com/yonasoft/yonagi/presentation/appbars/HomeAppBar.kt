@@ -1,5 +1,4 @@
-package com.yonasoft.yonagi.presentation
-
+package com.yonasoft.yonagi.presentation.appbars
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize

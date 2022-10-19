@@ -1,10 +1,10 @@
-package com.yonasoft.yonagi.presentation.screens.home
+package com.yonasoft.yonagi.presentation.screens.lists
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen() {
-    Text(text = "home")
+fun ListsScreen(navController: NavController) {
+    Text(text = "lists")
 }

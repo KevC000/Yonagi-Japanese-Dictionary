@@ -1,4 +1,23 @@
 package com.yonasoft.yonagi.di
 
-class AppModule {
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+
+@Module
+@InstallIn(SingletonComponent::class)
+object AppModule {
+//    @Provides
+//    @Singleton
+//    fun provideRepository(){}
+
+//    @Provides
+//    @Singleton
+//    fun provideStockDatabase(app: YonagiApplication) {
+//        return Room.databaseBuilder(
+//            app,
+//            StockDatabase::class.java,
+//            "stockdb.db"
+//        ).build()
+//    }
 }

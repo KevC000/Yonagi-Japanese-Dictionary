@@ -1,4 +1,4 @@
-package com.yonasoft.yonagi.dictionary.presentation
+package com.yonasoft.yonagi.presentation
 
 
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,7 @@ import com.yonasoft.yonagi.R
 import com.yonasoft.yonagi.ui.theme.Red2
 
 @Composable
-fun AppBar(
+fun HomeScreenAppBar(
     onNavigationIconClick: () -> Unit
 ) {
     TopAppBar(

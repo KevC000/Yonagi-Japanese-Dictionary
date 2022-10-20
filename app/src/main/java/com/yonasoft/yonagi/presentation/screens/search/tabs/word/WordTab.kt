@@ -3,6 +3,8 @@ package com.yonasoft.yonagi.presentation.screens.search.tabs.word
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,10 +15,15 @@ fun WordTab(
 
 ) {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
             .background(Red1)
         ,
     ) {
-        Text(text = "word")
+
+        LazyColumn{
+
+        }
+
     }
 }

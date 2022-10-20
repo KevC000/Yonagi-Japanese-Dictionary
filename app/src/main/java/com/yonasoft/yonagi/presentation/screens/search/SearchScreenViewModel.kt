@@ -13,7 +13,6 @@ class SearchScreenViewModel @Inject constructor(): ViewModel() {
         mutableStateOf("")
     val searchTextState: State<String> = _searchTextState
 
-
     fun updateSearchTextState(newValue: String) {
         _searchTextState.value = newValue
     }

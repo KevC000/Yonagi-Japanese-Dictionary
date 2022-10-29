@@ -7,12 +7,14 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.yonasoft.yonagi.presentation.appbars.SearchScreenAppBar
-import com.yonasoft.yonagi.presentation.screens.search.tabs.SearchScreenTabLayout
+import com.yonasoft.yonagi.presentation.screens.search.tabs.SearchScreenContent
+import kotlinx.coroutines.CoroutineScope
 
 @ExperimentalPagerApi
 @Composable
@@ -22,6 +24,9 @@ fun SearchScreen(
 ) {
 
     val searchTextState by viewModel.searchTextState
+    val pagerState by viewModel.pagerState
+    val tabs = viewModel.tabs
+    val scope: CoroutineScope = rememberCoroutineScope()
 
     Scaffold(
         modifier = Modifier
@@ -30,14 +35,13 @@ fun SearchScreen(
             SearchScreenAppBar(
                 text = searchTextState,
                 onCloseClicked = {
-                    viewModel.updateSearchTextState(newValue = "")
+                    viewModel.searchTextState.value=""
                 },
 
                 onTextChange = {
-                    viewModel.updateSearchTextState(newValue = it)
+                    viewModel.searchTextState.value=it
                 },
                 navController = navController,
-                onSearchTriggered = {},
                 onSearchClicked = {},
             )
         }
@@ -49,10 +53,11 @@ fun SearchScreen(
                 modifier =
                 Modifier.fillMaxSize()
             ) {
-                SearchScreenTabLayout()
+                SearchScreenContent(tabs = tabs, pagerState = pagerState, scope = scope)
             }
-
         }
     }
 }
+
+
 

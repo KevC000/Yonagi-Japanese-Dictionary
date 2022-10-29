@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalPagerApi::class)
+
 package com.yonasoft.yonagi
 
 import android.os.Bundle
@@ -10,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.yonasoft.yonagi.presentation.navigation.Navigation
 import com.yonasoft.yonagi.ui.theme.YonagiTheme
 import dagger.hilt.android.AndroidEntryPoint

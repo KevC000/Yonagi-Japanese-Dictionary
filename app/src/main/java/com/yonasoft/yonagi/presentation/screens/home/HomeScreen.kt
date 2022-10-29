@@ -1,10 +1,13 @@
 package com.yonasoft.yonagi.presentation.screens.home
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.yonasoft.yonagi.presentation.appbars.HomeScreenAppBar
 import com.yonasoft.yonagi.presentation.menus.DrawerBody
@@ -39,14 +42,20 @@ fun HomeScreen(navController: NavController) {
             FloatingActionButton(
                 onClick = {
                     navController.navigate(Screen.SearchScreen.route)
-                }
-            , backgroundColor = Red1
+                }, backgroundColor = Red1
             ) {
                 Icon(Icons.Filled.Search, "To search screen")
             }
         },
         floatingActionButtonPosition = FabPosition.End
     ) {
+        Surface(modifier = Modifier.fillMaxSize()) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+            ) {
 
+        }
+        }
     }
 }

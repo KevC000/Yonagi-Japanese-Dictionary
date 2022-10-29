@@ -11,13 +11,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchScreenViewModel @Inject constructor(): ViewModel() {
-    val searchTextState: MutableState<String> =
-        mutableStateOf("")
-    val tabs:List<String> = listOf("Word","Kanji")
-
-    val pagerState:MutableState<PagerState> = mutableStateOf(PagerState(0))
-
-
-
+class SearchScreenViewModel @Inject constructor() : ViewModel() {
+    val searchTextState: MutableState<String> = mutableStateOf("")
+    val tabs: List<String> = listOf("Word", "Kanji")
+    val pagerState: MutableState<PagerState> = mutableStateOf(PagerState(0))
 }

@@ -1,4 +1,4 @@
-package com.yonasoft.yonagi.data.local.db.word
+package com.yonasoft.yonagi.data.local.db.word.entity
 
 data class Word(
     val id: Long,

@@ -29,7 +29,7 @@ fun SearchScreenAppBar(
     onSearchClicked: (String) -> Unit,
 ) {
     SearchAppBar(
-        navController=navController,
+        navController = navController,
         text = text,
         onTextChange = onTextChange,
         onCloseClicked = onCloseClicked,
@@ -46,7 +46,7 @@ fun SearchAppBar(
     onCloseClicked: () -> Unit,
     onSearchClicked: (String) -> Unit,
 
-) {
+    ) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()

@@ -18,9 +18,10 @@ fun HomeScreenAppBar(
 ) {
     TopAppBar(
         title = {
-            Box(modifier = Modifier.fillMaxSize(),
+            Box(
+                modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center
-                ) {
+            ) {
                 Text(text = stringResource(id = R.string.app_name))
             }
         },

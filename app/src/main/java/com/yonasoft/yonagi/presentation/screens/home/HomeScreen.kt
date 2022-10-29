@@ -12,6 +12,7 @@ import androidx.navigation.NavController
 import com.yonasoft.yonagi.presentation.appbars.HomeScreenAppBar
 import com.yonasoft.yonagi.presentation.menus.DrawerBody
 import com.yonasoft.yonagi.presentation.menus.DrawerHeader
+import com.yonasoft.yonagi.presentation.menus.DrawerMenu
 import com.yonasoft.yonagi.presentation.menus.MenuItem
 import com.yonasoft.yonagi.presentation.navigation.Screen
 import com.yonasoft.yonagi.ui.theme.Red1
@@ -31,12 +32,7 @@ fun HomeScreen(navController: NavController) {
             })
         },
         drawerContent = {
-            DrawerHeader()
-            DrawerBody(
-                menuItems = MenuItem.getMenuItems(),
-                onItemClick = {
-                    navController.navigate(it.id)
-                })
+            DrawerMenu(navController = navController)
         },
         floatingActionButton = {
             FloatingActionButton(
@@ -55,7 +51,7 @@ fun HomeScreen(navController: NavController) {
                     .fillMaxSize()
             ) {
 
-        }
+            }
         }
     }
 }

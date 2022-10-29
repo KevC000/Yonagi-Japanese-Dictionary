@@ -22,7 +22,12 @@ import kotlinx.coroutines.launch
 
 @ExperimentalPagerApi
 @Composable
-fun SearchScreenContent(modifier: Modifier = Modifier, tabs:List<String>, pagerState:PagerState, scope: CoroutineScope) {
+fun SearchScreenContent(
+    modifier: Modifier = Modifier,
+    tabs: List<String>,
+    pagerState: PagerState,
+    scope: CoroutineScope
+) {
 
     Column(
         modifier = modifier.fillMaxSize()
@@ -31,7 +36,6 @@ fun SearchScreenContent(modifier: Modifier = Modifier, tabs:List<String>, pagerS
         SearchScreenHorizontalPager(tabs, pagerState)
     }
 }
-
 
 
 @ExperimentalPagerApi
@@ -64,6 +68,7 @@ private fun SearchScreenTabLayout(
         }
     }
 }
+
 @ExperimentalPagerApi
 @Composable
 private fun SearchScreenHorizontalPager(

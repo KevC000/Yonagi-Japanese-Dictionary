@@ -50,8 +50,7 @@ fun SearchScreen(
             modifier = Modifier.fillMaxSize()
         ) {
             Column(
-                modifier =
-                Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize()
             ) {
                 SearchScreenContent(tabs = tabs, pagerState = pagerState, scope = scope)
             }

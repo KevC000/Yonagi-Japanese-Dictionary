@@ -2,6 +2,7 @@ package com.yonasoft.yonagi.presentation.screens.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -45,7 +46,7 @@ fun HomeScreen(navController: NavController) {
         },
         floatingActionButtonPosition = FabPosition.End
     ) {
-        Surface(modifier = Modifier.fillMaxSize()) {
+        Surface(modifier = Modifier.fillMaxSize().padding(it)) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()

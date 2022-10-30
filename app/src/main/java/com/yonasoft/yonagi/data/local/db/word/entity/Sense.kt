@@ -6,5 +6,4 @@ data class Sense(
     val related:String,
     val antonym:String,
     val partOfSpeech:String,
-
 )

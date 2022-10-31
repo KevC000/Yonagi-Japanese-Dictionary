@@ -1,3 +1,5 @@
 package com.yonasoft.yonagi.domain.model
 
-data class Word(val entry:Long)
+data class Word(
+    val id:Long
+)

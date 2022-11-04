@@ -16,15 +16,17 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SearchScreenViewModel @Inject constructor(private val repository: RepositoryImpl) :
-    ViewModel() {
+class SearchScreenViewModel @Inject constructor(
+    private val repository: RepositoryImpl
+) : ViewModel() {
     val searchTextState: MutableState<String> = mutableStateOf("")
     val tabs: List<String> = listOf("Word", "Kanji")
     val pagerState: MutableState<PagerState> = mutableStateOf(PagerState(0))
 
+    //TODO: Work on search ViewModel
+
     fun parseAndGetData() {
         viewModelScope.launch {
-
             Log.d("app test", "$")
         }
     }

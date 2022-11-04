@@ -1,9 +1,19 @@
 package com.yonasoft.yonagi.di
 
+import android.content.Context
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.yonasoft.yonagi.YonagiApplication
+import com.yonasoft.yonagi.data.local.db.word.WordDao
+import com.yonasoft.yonagi.data.local.db.word.WordDatabase
+import com.yonasoft.yonagi.data.local.db.word.entity.WordEntity
+import com.yonasoft.yonagi.data.local.repository.RepositoryImpl
 import com.yonasoft.yonagi.util.parser.WordXMLParser
+import com.yonasoft.yonagi.util.parser.XMLParser
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -11,23 +21,23 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @Singleton
     @Provides
-    fun provideWordXMLParser(): WordXMLParser {
-        return WordXMLParser()
+    @Singleton
+    fun provideWordDao(wordDatabase: WordDatabase): WordDao = wordDatabase.dao
+
+    @Provides
+    @Singleton
+    fun provideWordDatabase(@ApplicationContext context: Context): WordDatabase {
+        return Room.databaseBuilder(
+            context,
+            WordDatabase::class.java,
+            "worddb.db"
+        ).build()
     }
 
-//    @Provides
-//    @Singleton
-//    fun provideRepository(){}
-
-//    @Provides
-//    @Singleton
-//    fun provideStockDatabase(app: YonagiApplication) {
-//        return Room.databaseBuilder(
-//            app,
-//            StockDatabase::class.java,
-//            "stockdb.db"
-//        ).build()
-//    }
+    @Provides
+    @Singleton
+    fun provideWordXMLParser(): XMLParser<WordEntity> {
+        return WordXMLParser()
+    }
 }

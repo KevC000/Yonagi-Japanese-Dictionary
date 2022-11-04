@@ -1,7 +1,7 @@
 package com.yonasoft.yonagi.di
 
+import com.yonasoft.yonagi.data.local.db.word.entity.WordEntity
 import com.yonasoft.yonagi.data.local.repository.RepositoryImpl
-import com.yonasoft.yonagi.domain.model.Word
 import com.yonasoft.yonagi.domain.repository.Repository
 import com.yonasoft.yonagi.util.parser.WordXMLParser
 import com.yonasoft.yonagi.util.parser.XMLParser
@@ -19,7 +19,7 @@ abstract class RepositoryModule {
     @Singleton
     abstract fun bindsWordXMLParser(
         wordXMLParser:WordXMLParser
-    ):XMLParser<Word>
+    ):XMLParser<WordEntity>
 
     @Binds
     @Singleton

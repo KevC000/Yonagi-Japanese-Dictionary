@@ -22,8 +22,7 @@ fun WordTab(
     ) {
 
         LazyColumn{
-
+            //TODO: Word List. Flow list gets collected to viewmodel and added to state
         }
-
     }
 }

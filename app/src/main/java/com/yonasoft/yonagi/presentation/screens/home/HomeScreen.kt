@@ -3,12 +3,14 @@ package com.yonasoft.yonagi.presentation.screens.home
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.yonasoft.yonagi.presentation.appbars.HomeScreenAppBar
 import com.yonasoft.yonagi.presentation.menus.DrawerBody
@@ -36,17 +38,15 @@ fun HomeScreen(navController: NavController) {
             DrawerMenu(navController = navController)
         },
         floatingActionButton = {
-            FloatingActionButton(
-                onClick = {
-                    navController.navigate(Screen.SearchScreen.route)
-                }, backgroundColor = Red1
-            ) {
-                Icon(Icons.Filled.Search, "To search screen")
+            HomeFAB(navController = navController) {
+                navController.navigate(Screen.SearchScreen.route)
             }
         },
         floatingActionButtonPosition = FabPosition.End
     ) {
-        Surface(modifier = Modifier.fillMaxSize().padding(it)) {
+        Surface(modifier = Modifier
+            .fillMaxSize()
+            .padding(it)) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -54,5 +54,17 @@ fun HomeScreen(navController: NavController) {
 
             }
         }
+    }
+}
+
+@Composable
+private fun HomeFAB(navController: NavController, onClick: () -> Unit) {
+    FloatingActionButton(
+        onClick = {
+            onClick()
+        }, backgroundColor = Red1,
+        shape = RoundedCornerShape(48.dp)
+    ) {
+        Icon(Icons.Filled.Search, "To search screen")
     }
 }

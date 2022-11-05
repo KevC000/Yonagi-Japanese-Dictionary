@@ -20,7 +20,7 @@ class WordXMLParser @Inject constructor(): XMLParser<WordEntity> {
         parser.setInput(wordsAsset, "UTF-8")
 
         var eventType:Int = parser.eventType
-        //TODO: Parse and add to db
+        //TODO: Parse and return list
         while(eventType != XmlPullParser.END_DOCUMENT){
             if(eventType == XmlPullParser.START_TAG){
 

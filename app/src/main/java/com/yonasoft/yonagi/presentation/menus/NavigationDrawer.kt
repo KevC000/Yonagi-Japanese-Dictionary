@@ -18,7 +18,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.yonasoft.yonagi.ui.theme.Red3
+import com.yonasoft.yonagi.presentation.screens.splash_and_loading.LogoSplashScreen
 
 @Composable
 fun DrawerMenu(menuItems: List<MenuItem> = MenuItem.getMenuItems(), navController:NavController){
@@ -33,16 +33,15 @@ fun DrawerMenu(menuItems: List<MenuItem> = MenuItem.getMenuItems(), navControlle
 @Composable
 fun DrawerHeader(
 ) {
-
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Red3)
-            .padding(60.dp)
+            .fillMaxHeight(.35f)
+            .background(Color.White)
             ,
         contentAlignment = Alignment.Center
     ) {
-        Text(text = "Yonagi", fontSize = 36.sp, color = Color.White)
+        LogoSplashScreen()
     }
 }
 
@@ -53,30 +52,37 @@ fun DrawerBody(
     itemTextStyle: TextStyle = TextStyle(fontSize = 18.sp),
     onItemClick: (MenuItem) -> Unit
 ) {
-    LazyColumn(modifier){
-        items(menuItems) { item ->
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { onItemClick(item) }
-                    .padding(16.dp)
-            ){
-                if (item.icon!=null){
-                    Icon(
-                        imageVector = item.icon,
-                        contentDescription = item.contentDescription,
-                    )
-                } else{
-                        Image(modifier = Modifier.size(24.dp), painter = painterResource(id = item.resource!!), contentDescription = item.contentDescription, contentScale = ContentScale.Fit)
-                }
 
-                Spacer(modifier = Modifier.width(16.dp))
-                Text(
-                    text = item.title,
-                    style = itemTextStyle,
-                    modifier = Modifier.weight(1f)
-                )
+        LazyColumn(modifier) {
+            items(menuItems) { item ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { onItemClick(item) }
+                        .padding(16.dp)
+                ) {
+                    if (item.icon != null) {
+                        Icon(
+                            imageVector = item.icon,
+                            contentDescription = item.contentDescription,
+                        )
+                    } else {
+                        Image(
+                            modifier = Modifier.size(24.dp),
+                            painter = painterResource(id = item.resource!!),
+                            contentDescription = item.contentDescription,
+                            contentScale = ContentScale.Fit
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.width(16.dp))
+                    Text(
+                        text = item.title,
+                        style = itemTextStyle,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
             }
         }
-    }
+
 }

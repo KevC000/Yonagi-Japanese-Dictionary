@@ -4,7 +4,6 @@ import com.yonasoft.yonagi.data.local.db.word.WordDao
 import com.yonasoft.yonagi.data.local.db.word.entity.WordEntity
 import com.yonasoft.yonagi.domain.repository.Repository
 import com.yonasoft.yonagi.util.parser.WordXMLParser
-import com.yonasoft.yonagi.util.parser.XMLParser
 import kotlinx.coroutines.flow.Flow
 import java.io.InputStream
 import javax.inject.Inject

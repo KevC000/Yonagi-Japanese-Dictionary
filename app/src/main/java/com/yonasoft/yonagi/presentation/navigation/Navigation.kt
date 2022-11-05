@@ -10,12 +10,17 @@ import com.yonasoft.yonagi.presentation.screens.home.HomeScreen
 import com.yonasoft.yonagi.presentation.screens.kana.KanaScreen
 import com.yonasoft.yonagi.presentation.screens.lists.ListsScreen
 import com.yonasoft.yonagi.presentation.screens.search.SearchScreen
+import com.yonasoft.yonagi.presentation.screens.splash_and_loading.SplashScreen
 
 @ExperimentalPagerApi
 @Composable
 fun Navigation(navController:NavHostController) {
 
-    NavHost(navController = navController, startDestination = Screen.HomeScreen.route){
+    NavHost(navController = navController, startDestination = Screen.SplashScreen.route){
+
+        composable(route = Screen.SplashScreen.route){
+            SplashScreen(navController = navController)
+        }
         composable(route = Screen.HomeScreen.route){
             HomeScreen(navController = navController)
         }

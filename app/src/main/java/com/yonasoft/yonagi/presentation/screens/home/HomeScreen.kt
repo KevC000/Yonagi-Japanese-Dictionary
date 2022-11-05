@@ -18,6 +18,8 @@ import com.yonasoft.yonagi.presentation.menus.DrawerHeader
 import com.yonasoft.yonagi.presentation.menus.DrawerMenu
 import com.yonasoft.yonagi.presentation.menus.MenuItem
 import com.yonasoft.yonagi.presentation.navigation.Screen
+import com.yonasoft.yonagi.presentation.screens.splash_and_loading.GetDataLoadScreen
+import com.yonasoft.yonagi.presentation.screens.splash_and_loading.LogoSplashScreen
 import com.yonasoft.yonagi.ui.theme.Red1
 import kotlinx.coroutines.launch
 
@@ -44,15 +46,12 @@ fun HomeScreen(navController: NavController) {
         },
         floatingActionButtonPosition = FabPosition.End
     ) {
-        Surface(modifier = Modifier
-            .fillMaxSize()
-            .padding(it)) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-            ) {
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(it)
+        ) {
 
-            }
         }
     }
 }

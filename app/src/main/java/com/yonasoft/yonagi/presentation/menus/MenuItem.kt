@@ -45,13 +45,6 @@ data class MenuItem(
                     icon = Icons.Default.Favorite,
                     contentDescription = "Go to Favorites"
                 ),
-                MenuItem(
-                    id = Screen.KanaScreen.route,
-                    title = "Kana",
-                    icon = null,
-                    resource = R.drawable.he,
-                    contentDescription = "Go to Favorites"
-                )
             )
         }
     }

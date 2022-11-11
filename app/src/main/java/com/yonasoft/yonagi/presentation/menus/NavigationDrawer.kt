@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Icon
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +22,7 @@ import androidx.navigation.NavController
 import com.yonasoft.yonagi.presentation.screens.splash_and_loading.LogoSplashScreen
 
 @Composable
-fun DrawerMenu(menuItems: List<MenuItem> = MenuItem.getMenuItems(), navController:NavController){
+fun DrawerMenu(menuItems: List<MenuItem> = MenuItem.getMenuItems(), navController: NavController) {
     DrawerHeader()
     DrawerBody(
         menuItems = menuItems,
@@ -37,8 +38,7 @@ fun DrawerHeader(
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight(.35f)
-            .background(Color.White)
-            ,
+            .background(Color.White),
         contentAlignment = Alignment.Center
     ) {
         LogoSplashScreen()
@@ -52,7 +52,7 @@ fun DrawerBody(
     itemTextStyle: TextStyle = TextStyle(fontSize = 18.sp),
     onItemClick: (MenuItem) -> Unit
 ) {
-
+    Surface(modifier) {
         LazyColumn(modifier) {
             items(menuItems) { item ->
                 Row(
@@ -84,5 +84,5 @@ fun DrawerBody(
                 }
             }
         }
-
+    }
 }

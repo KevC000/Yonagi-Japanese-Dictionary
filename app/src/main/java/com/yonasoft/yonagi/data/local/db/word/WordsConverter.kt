@@ -1,19 +1,25 @@
-package com.yonasoft.yonagi.data.local.db.word.converter
+package com.yonasoft.yonagi.data.local.db.word
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.yonasoft.yonagi.data.local.db.word.entity.Senses
 
 class WordsConverter {
 
     @TypeConverter
     fun fromElements(elements:List<String>):String{
-        return Gson().toJson(elements)
+        var res = ""
+        for(i in 0 until elements.size){
+            res+=elements[i]
+            if(i != elements.size-1){
+                res+=","
+            }
+        }
+        return res
     }
     @TypeConverter
     fun toElements(elements:String): List<String> {
-        return Gson().fromJson(elements,  object : TypeToken<List<String>>() {}.type)
+        return elements.split(",")
     }
 
     @TypeConverter

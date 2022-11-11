@@ -13,7 +13,6 @@ fun KanjiTab() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Red1),
         ) {
         Text(text = "kanji")
     }

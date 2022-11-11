@@ -1,6 +1,6 @@
 package com.yonasoft.yonagi.di
 
-import com.yonasoft.yonagi.data.local.db.word.entity.WordEntity
+import com.yonasoft.yonagi.data.local.db.word.WordEntity
 import com.yonasoft.yonagi.data.local.repository.RepositoryImpl
 import com.yonasoft.yonagi.domain.repository.Repository
 import com.yonasoft.yonagi.util.parser.WordXMLParser

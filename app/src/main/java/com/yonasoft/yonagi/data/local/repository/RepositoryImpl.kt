@@ -1,7 +1,7 @@
 package com.yonasoft.yonagi.data.local.repository
 
 import com.yonasoft.yonagi.data.local.db.word.WordDao
-import com.yonasoft.yonagi.data.local.db.word.entity.WordEntity
+import com.yonasoft.yonagi.data.local.db.word.WordEntity
 import com.yonasoft.yonagi.domain.repository.Repository
 import com.yonasoft.yonagi.util.parser.WordXMLParser
 import kotlinx.coroutines.flow.Flow
@@ -30,9 +30,9 @@ class RepositoryImpl @Inject constructor(
         return wordsDao.getWord(id)
     }
 
-//    override suspend fun searchWords(query: String): Flow<List<WordEntity>> {
-//        return wordsDao.searchWords(query)
-//    }
+    override suspend fun searchWords(query: String): Flow<List<WordEntity>> {
+        return wordsDao.searchWords(query)
+    }
 
     override suspend fun updateWord(word: WordEntity) {
         wordsDao.updateWord(word)

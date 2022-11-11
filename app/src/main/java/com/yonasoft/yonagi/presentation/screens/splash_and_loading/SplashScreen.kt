@@ -19,7 +19,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.yonasoft.yonagi.R
 import com.yonasoft.yonagi.presentation.navigation.Screen
-import com.yonasoft.yonagi.presentation.screens.splash_and_loading.viewmodel.SplashViewModel
 import com.yonasoft.yonagi.ui.theme.Red2
 import kotlinx.coroutines.delay
 

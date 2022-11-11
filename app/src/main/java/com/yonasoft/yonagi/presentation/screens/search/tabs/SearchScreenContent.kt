@@ -15,7 +15,7 @@ import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.yonasoft.yonagi.presentation.screens.search.tabs.kanji.KanjiTab
 import com.yonasoft.yonagi.presentation.screens.search.tabs.word.WordTab
-import com.yonasoft.yonagi.ui.theme.Red3
+import com.yonasoft.yonagi.ui.theme.Red2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -47,7 +47,7 @@ private fun SearchScreenTabLayout(
 ) {
     ScrollableTabRow(
         selectedTabIndex = pagerState.currentPage,
-        backgroundColor = Red3,
+        backgroundColor = Red2,
         contentColor = Color.White,
         indicator = { tabPositions ->
             TabRowDefaults.Indicator(

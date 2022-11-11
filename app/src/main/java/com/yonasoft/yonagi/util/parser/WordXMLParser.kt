@@ -1,6 +1,6 @@
 package com.yonasoft.yonagi.util.parser
 
-import com.yonasoft.yonagi.data.local.db.word.entity.WordEntity
+import com.yonasoft.yonagi.data.local.db.word.WordEntity
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 import java.io.InputStream

@@ -17,7 +17,7 @@ fun WordTab(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Red1)
+
         ,
     ) {
 

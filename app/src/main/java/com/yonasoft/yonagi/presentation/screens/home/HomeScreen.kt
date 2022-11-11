@@ -1,6 +1,6 @@
 package com.yonasoft.yonagi.presentation.screens.home
 
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,12 +15,11 @@ import androidx.navigation.NavController
 import com.yonasoft.yonagi.presentation.appbars.HomeScreenAppBar
 import com.yonasoft.yonagi.presentation.menus.DrawerBody
 import com.yonasoft.yonagi.presentation.menus.DrawerHeader
-import com.yonasoft.yonagi.presentation.menus.DrawerMenu
 import com.yonasoft.yonagi.presentation.menus.MenuItem
 import com.yonasoft.yonagi.presentation.navigation.Screen
-import com.yonasoft.yonagi.presentation.screens.splash_and_loading.GetDataLoadScreen
-import com.yonasoft.yonagi.presentation.screens.splash_and_loading.LogoSplashScreen
 import com.yonasoft.yonagi.ui.theme.Red1
+import com.yonasoft.yonagi.ui.theme.Red2
+import com.yonasoft.yonagi.ui.theme.Red3
 import kotlinx.coroutines.launch
 
 @Composable
@@ -37,7 +36,14 @@ fun HomeScreen(navController: NavController) {
             })
         },
         drawerContent = {
-            DrawerMenu(navController = navController)
+            DrawerHeader()
+            DrawerBody(
+                menuItems = MenuItem.getMenuItems(),
+                onItemClick = {
+                    navController.navigate(it.id)
+                },
+                modifier = Modifier.fillMaxSize().background(color = Red3)
+                )
         },
         floatingActionButton = {
             HomeFAB(navController = navController) {
